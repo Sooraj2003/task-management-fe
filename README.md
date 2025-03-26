@@ -1,12 +1,99 @@
-# React + Vite
+# Task Management Frontend (task-management-fe)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+The **Task Management Frontend** (`task-management-fe`) is a React-based application that provides a user-friendly interface for managing tasks. It integrates with a backend API to handle task creation, updating, deletion, and user authentication.
 
-Currently, two official plugins are available:
+## Features
+- **User Authentication**: Login and logout functionality.
+- **Task Management**: Create, update, delete, and view tasks.
+- **Admin Dashboard**: Manage tasks and users (if applicable).
+- **State Management**: Uses Redux for efficient state handling.
+- **Notifications**: Displays success/error messages using toast notifications.
+- **Responsive UI**: Designed with Tailwind CSS for a seamless user experience across devices.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- **Frontend**: React.js, Vite
+- **State Management**: Redux Toolkit
+- **Styling**: Tailwind CSS
+- **Routing**: React Router
+- **Backend Integration**: Fetch API / Axios
+- **Deployment**: AWS ec2 manual deployment (NGINX HTTP SERVER)
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+Ensure you have the following installed:
+- Node.js (>= 16.x)
+- npm or yarn
+
+### Steps
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-username/task-management-fe.git
+   cd task-management-fe
+   ```
+2. Install dependencies:
+   ```sh
+   npm install  # or yarn install
+   ```
+3. Start the development server:
+   ```sh
+   npm run dev  # or yarn dev
+   ```
+
+## Project Structure
+```
+📂 task-management-fe
+│-- 📂 src
+│   │-- 📂 components  # Reusable UI components
+│   │   │-- AdminTasks.jsx
+│   │   │-- Body.jsx
+│   │   │-- CreateTask.jsx
+│   │   │-- Footer.jsx
+│   │   │-- Login.jsx
+│   │   │-- Navbar.jsx
+│   │   │-- Task.jsx
+│   │   │-- Tasks.jsx
+│   │-- 📂 utils
+│   │   │-- appStore.js
+│   │   │-- constants.js
+│   │   │-- tasksSlice.js
+│   │   │-- userSlice.js
+│   │-- 📜 App.jsx     # Main app component
+│   │-- 📜 index.css   # Global styles
+│   │-- 📜 index.html  # Main HTML file
+│   │-- 📜 main.js     # Entry point
+│-- 📜 .env            # Environment variables
+│-- 📜 .gitignore      # Git ignore file
+│-- 📜 eslint.config.js # ESLint configuration
+│-- 📜 package.json    # Project dependencies
+│-- 📜 package-lock.json # Dependency lock file
+│-- 📜 postcss.config.js # PostCSS configuration
+│-- 📜 README.md       # Project documentation
+│-- 📜 tailwind.config.js  # Tailwind CSS configuration
+```
+
+## Usage
+- **Creating a Task**: Navigate to the "Create Task" page, fill in the form, and submit.
+- **Editing a Task**: Click on a task and modify its details.
+- **Deleting a Task**: Select a task and press delete.
+
+
+
+## Deployment
+1. Build the project:
+   ```sh
+   npm run build  # or yarn build
+   ```
+2. Deploy using AWS ec2 and Nginx http server
+  
+
+## Contributing
+Feel free to fork the project and submit pull requests. Ensure you follow the coding standards and commit message guidelines.
+
+## License
+This project is licensed under the MIT License.
+
+---
+Developed by **Sooraj** 🚀
+
