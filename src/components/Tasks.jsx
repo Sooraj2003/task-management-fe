@@ -53,8 +53,8 @@ const Tasks = () => {
   });
 
   if (isLoading) return <p className="text-gray-600 text-center">Loading tasks...</p>;
-  if (!tasks || tasks.length === 0) return <p className="text-gray-600 text-center">No tasks found.</p>;
-  if (error) return <p className="text-red-600 text-center">Error: {error}</p>;
+  if (error || !tasks || tasks.length === 0) return <p className="text-gray-600 text-center">No tasks found.</p>;
+
   
 
   return (
