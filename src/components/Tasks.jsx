@@ -4,10 +4,12 @@ import { BASE_URL } from "../utils/constants";
 import Task from "./Task";
 import { useDispatch, useSelector } from "react-redux";
 import { setTasks } from "../utils/tasksSlice";
+import { useNavigate } from "react-router-dom";
 
 const Tasks = () => {
   const tasks = useSelector((store) => store?.tasks);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -21,6 +23,9 @@ const Tasks = () => {
       dispatch(setTasks(response?.data?.tasks));
       setIsLoading(false);
     } catch (err) {
+      if(err?.response?.status === 401){
+        navigate("/login")
+      }
       setError(err.message);
       setIsLoading(false);
     }

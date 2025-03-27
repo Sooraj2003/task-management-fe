@@ -3,7 +3,7 @@ import { Pencil, Trash2, CheckCircle } from 'lucide-react';
 import { BASE_URL } from '../utils/constants';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { addTask, deleteTask, markTaskComplete } from '../utils/tasksSlice';
+import {deleteTask, markTaskComplete, updateTask } from '../utils/tasksSlice';
 
 const Task = ({task}) => {
     const dispatch = useDispatch();
@@ -47,7 +47,7 @@ const Task = ({task}) => {
   try{  
     // Update on DB
     const res = await axios.patch(BASE_URL+"/task/update/"+_id,editedTask,{withCredentials:true})
-    dispatch(addTask(res?.data?.task))
+    dispatch(updateTask(res?.data?.task))
     
     // For now, just closing the edit mode
     setIsEditing(false);
