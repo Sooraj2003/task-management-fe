@@ -21,7 +21,6 @@ function App() {
       <Routes>
        <Route path="/" element={<Body/>}>
        {(user?.firstName=== role )?<Route path="/" element={<AdminTasks/>}/>:<Route path="/" element={<Tasks/>}/> }
-        
         <Route path="login" element={<Login/>}/>
         <Route path="createTask" element={<CreateTask/>}/>
        </Route>

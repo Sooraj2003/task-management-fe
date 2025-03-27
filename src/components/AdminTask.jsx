@@ -3,7 +3,7 @@ import { Pencil, Trash2, CheckCircle } from 'lucide-react';
 import { BASE_URL } from '../utils/constants';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { addTask, deleteTask, markTaskComplete } from '../utils/tasksSlice';
+import { addTask, deleteTask, markTaskComplete, updateTask } from '../utils/tasksSlice';
 
 const AdminTask = ({task}) => {
     const dispatch = useDispatch();
@@ -51,7 +51,7 @@ const AdminTask = ({task}) => {
                 editedTask,
                 {withCredentials: true}
             );
-            dispatch(addTask(res?.data?.task));
+            dispatch(updateTask(res?.data?.task));
             
             // Close edit mode
             setIsEditing(false);
